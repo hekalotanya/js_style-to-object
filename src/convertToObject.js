@@ -19,8 +19,8 @@ function convertToObject(sourceString) {
     .split(';')
     .map(element => element.split(':'))
     .filter(item => item.length > 1)
-    .forEach(element => {
-      resultObject[element[0].trim()] = element[1].trim();
+    .forEach(([key, value]) => {
+      resultObject[key.trim()] = value.trim();
     });
 
   return resultObject;
